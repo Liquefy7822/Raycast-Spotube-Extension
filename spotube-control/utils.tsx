@@ -7,21 +7,21 @@ import { runAppleScript } from "run-applescript";
  * @param commandsToRunAfterSpotifyIsRunning - The AppleScript command(s) to run after ensuring Spotify is running.
  * @returns Generated AppleScript.
  */
-export function buildScriptEnsuringSpotifyIsRunning(commandsToRunAfterSpotifyIsRunning: string): string {
+export function buildScriptEnsuringSpotubeIsRunning(commandsToRunAfterSpotubeIsRunning: string): string {
   return `
-    tell application "Spotify"
-      if not application "Spotify" is running then
+    tell application "Spotube"
+      if not application "Spotube" is running then
         activate
 
         set _maxOpenWaitTimeInSeconds to 5
         set _openCounter to 1
-        repeat until application "Spotify" is running
+        repeat until application "Spotube" is running
           delay 1
           set _openCounter to _openCounter + 1
           if _openCounter > _maxOpenWaitTimeInSeconds then exit repeat
         end repeat
       end if
-      ${commandsToRunAfterSpotifyIsRunning}
+      ${commandsToRunAfterSpotubeIsRunning}
     end tell`;
 }
 
