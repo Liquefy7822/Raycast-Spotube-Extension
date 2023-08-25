@@ -2,7 +2,7 @@ import { buildScriptEnsuringSpotifyIsRunning, runAppleScriptSilently } from "./u
 import { showNextTrackNotification } from "./trackNotification";
 
 export default async () => {
-  const script = buildScriptEnsuringSpotifyIsRunning(`next track`);
+  const script = buildScriptEnsuringSpotubeIsRunning(`next track`);
   await runAppleScriptSilently(script);
   await showNextTrackNotification();
 };
