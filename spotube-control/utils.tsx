@@ -39,9 +39,9 @@ export async function runAppleScriptSilently(appleScript: string) {
   await closeMainWindow();
 
   const applications = await getApplications();
-  const isSpotifyInstalled = applications.some((app) => app.name === "Spotify");
-  if (!isSpotifyInstalled) {
-    await showHUD("Spotify is not installed");
+  const isSpotubeInstalled = applications.some((app) => app.name === "Spotube");
+  if (!isSpotubeInstalled) {
+    await showHUD("Spotube is not installed");
     return;
   }
 
